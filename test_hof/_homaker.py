@@ -1,4 +1,3 @@
-import re
 import sys
 import types
 
@@ -124,8 +123,8 @@ def create_higher_order_module(source_module, module_name, fofs, hofs,
     """ Create a module of higher-order functions that can be chained on import
 
     For example:
-    >>> from hof_module.inc.inc import one as one_plus_two  # doctest: SKIP
-    >>> one_plus_two()  # doctest: SKIP
+    >>> from hof_module.inc.inc import one as one_plus_two  # doctest: +SKIP
+    >>> one_plus_two()  # doctest: +SKIP
     3
 
     Arguments:
@@ -143,7 +142,7 @@ def create_higher_order_module(source_module, module_name, fofs, hofs,
     composition (default False) -- determines how hofs are applied (see below)
 
     # Example import with hofs "higher1" and "higher2", and fof "first"
-    >>> from hof_module.higher1.higher2 import first  # doctest: SKIP
+    >>> from hof_module.higher1.higher2 import first  # doctest: +SKIP
 
     If ``composition`` is False (the default), then hofs will be applied as:
         "higher2(higher1(first))(*args, **kwargs)"
